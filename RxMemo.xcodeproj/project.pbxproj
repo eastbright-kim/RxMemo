@@ -14,6 +14,7 @@
 		DBCC7ABE26B289B300D40B38 /* RxMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7ABC26B289B300D40B38 /* RxMemo.xcdatamodeld */; };
 		DBCC7AC026B289B400D40B38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCC7ABF26B289B400D40B38 /* Assets.xcassets */; };
 		DBCC7AC326B289B400D40B38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCC7AC126B289B400D40B38 /* LaunchScreen.storyboard */; };
+		DBCC7AD026B294DA00D40B38 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7ACF26B294DA00D40B38 /* Memo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DBCC7ABF26B289B400D40B38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBCC7AC226B289B400D40B38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBCC7AC426B289B400D40B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBCC7ACF26B294DA00D40B38 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		DBCC7ACA26B28C3500D40B38 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DBCC7ACF26B294DA00D40B38 /* Memo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				DBCC7AB426B289B300D40B38 /* AppDelegate.swift in Sources */,
 				DBCC7AB626B289B300D40B38 /* SceneDelegate.swift in Sources */,
 				DBCC7ABE26B289B300D40B38 /* RxMemo.xcdatamodeld in Sources */,
+				DBCC7AD026B294DA00D40B38 /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
