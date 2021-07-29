@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4E370E501412AE030C850472 /* Pods_RxMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD26795DC3A8A00AF67BF46 /* Pods_RxMemo.framework */; };
 		DBCC7AB426B289B300D40B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AB326B289B300D40B38 /* AppDelegate.swift */; };
 		DBCC7AB626B289B300D40B38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AB526B289B300D40B38 /* SceneDelegate.swift */; };
-		DBCC7AB826B289B300D40B38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AB726B289B300D40B38 /* ViewController.swift */; };
 		DBCC7ABB26B289B300D40B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCC7AB926B289B300D40B38 /* Main.storyboard */; };
 		DBCC7ABE26B289B300D40B38 /* RxMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7ABC26B289B300D40B38 /* RxMemo.xcdatamodeld */; };
 		DBCC7AC026B289B400D40B38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCC7ABF26B289B400D40B38 /* Assets.xcassets */; };
@@ -24,7 +23,6 @@
 		DBCC7AB026B289B300D40B38 /* RxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCC7AB326B289B300D40B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBCC7AB526B289B300D40B38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DBCC7AB726B289B300D40B38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBCC7ABA26B289B300D40B38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBCC7ABD26B289B300D40B38 /* RxMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RxMemo.xcdatamodel; sourceTree = "<group>"; };
 		DBCC7ABF26B289B400D40B38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,7 +56,6 @@
 				54E3CC48261AE4B2774AFB08 /* Pods-RxMemo.debug.xcconfig */,
 				4B80F2C38193626E963AA318 /* Pods-RxMemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,16 +80,55 @@
 		DBCC7AB226B289B300D40B38 /* RxMemo */ = {
 			isa = PBXGroup;
 			children = (
+				DBCC7ACE26B28DE700D40B38 /* Scene */,
+				DBCC7ACD26B28DD500D40B38 /* Service */,
+				DBCC7ACC26B28C4E00D40B38 /* ViewModel */,
+				DBCC7ACB26B28C3D00D40B38 /* ViewController */,
+				DBCC7ACA26B28C3500D40B38 /* Model */,
 				DBCC7AB326B289B300D40B38 /* AppDelegate.swift */,
 				DBCC7AB526B289B300D40B38 /* SceneDelegate.swift */,
-				DBCC7AB726B289B300D40B38 /* ViewController.swift */,
-				DBCC7AB926B289B300D40B38 /* Main.storyboard */,
 				DBCC7ABF26B289B400D40B38 /* Assets.xcassets */,
-				DBCC7AC126B289B400D40B38 /* LaunchScreen.storyboard */,
 				DBCC7AC426B289B400D40B38 /* Info.plist */,
 				DBCC7ABC26B289B300D40B38 /* RxMemo.xcdatamodeld */,
 			);
 			path = RxMemo;
+			sourceTree = "<group>";
+		};
+		DBCC7ACA26B28C3500D40B38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DBCC7ACB26B28C3D00D40B38 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DBCC7AB926B289B300D40B38 /* Main.storyboard */,
+				DBCC7AC126B289B400D40B38 /* LaunchScreen.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DBCC7ACC26B28C4E00D40B38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DBCC7ACD26B28DD500D40B38 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DBCC7ACE26B28DE700D40B38 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,7 +245,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBCC7AB826B289B300D40B38 /* ViewController.swift in Sources */,
 				DBCC7AB426B289B300D40B38 /* AppDelegate.swift in Sources */,
 				DBCC7AB626B289B300D40B38 /* SceneDelegate.swift in Sources */,
 				DBCC7ABE26B289B300D40B38 /* RxMemo.xcdatamodeld in Sources */,
