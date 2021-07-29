@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4E370E501412AE030C850472 /* Pods_RxMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD26795DC3A8A00AF67BF46 /* Pods_RxMemo.framework */; };
+		DB901B0726B2D0C9002DD825 /* MemoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB901B0626B2D0C9002DD825 /* MemoListViewController.swift */; };
+		DB901B0926B2D0EB002DD825 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB901B0826B2D0EB002DD825 /* MemoDetailViewController.swift */; };
+		DB901B0B26B2D113002DD825 /* MemoComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB901B0A26B2D113002DD825 /* MemoComposeViewController.swift */; };
 		DBCC7AB426B289B300D40B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AB326B289B300D40B38 /* AppDelegate.swift */; };
 		DBCC7AB626B289B300D40B38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AB526B289B300D40B38 /* SceneDelegate.swift */; };
 		DBCC7ABB26B289B300D40B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCC7AB926B289B300D40B38 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		4B80F2C38193626E963AA318 /* Pods-RxMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemo.release.xcconfig"; path = "Target Support Files/Pods-RxMemo/Pods-RxMemo.release.xcconfig"; sourceTree = "<group>"; };
 		54E3CC48261AE4B2774AFB08 /* Pods-RxMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxMemo.debug.xcconfig"; path = "Target Support Files/Pods-RxMemo/Pods-RxMemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD26795DC3A8A00AF67BF46 /* Pods_RxMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB901B0626B2D0C9002DD825 /* MemoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewController.swift; sourceTree = "<group>"; };
+		DB901B0826B2D0EB002DD825 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
+		DB901B0A26B2D113002DD825 /* MemoComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoComposeViewController.swift; sourceTree = "<group>"; };
 		DBCC7AB026B289B300D40B38 /* RxMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCC7AB326B289B300D40B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBCC7AB526B289B300D40B38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 			children = (
 				DBCC7AB926B289B300D40B38 /* Main.storyboard */,
 				DBCC7AC126B289B400D40B38 /* LaunchScreen.storyboard */,
+				DB901B0626B2D0C9002DD825 /* MemoListViewController.swift */,
+				DB901B0826B2D0EB002DD825 /* MemoDetailViewController.swift */,
+				DB901B0A26B2D113002DD825 /* MemoComposeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -271,10 +280,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBCC7AD626B2987500D40B38 /* MemoryStorage.swift in Sources */,
+				DB901B0926B2D0EB002DD825 /* MemoDetailViewController.swift in Sources */,
 				DBCC7AB426B289B300D40B38 /* AppDelegate.swift in Sources */,
 				DBCC7AD226B295FA00D40B38 /* MemoStorageType.swift in Sources */,
 				DBCC7AB626B289B300D40B38 /* SceneDelegate.swift in Sources */,
 				DBCC7ABE26B289B300D40B38 /* RxMemo.xcdatamodeld in Sources */,
+				DB901B0726B2D0C9002DD825 /* MemoListViewController.swift in Sources */,
+				DB901B0B26B2D113002DD825 /* MemoComposeViewController.swift in Sources */,
 				DBCC7AD026B294DA00D40B38 /* Memo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
