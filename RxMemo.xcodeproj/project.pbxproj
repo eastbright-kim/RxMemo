@@ -28,6 +28,7 @@
 		DBCC7AD026B294DA00D40B38 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7ACF26B294DA00D40B38 /* Memo.swift */; };
 		DBCC7AD226B295FA00D40B38 /* MemoStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AD126B295FA00D40B38 /* MemoStorageType.swift */; };
 		DBCC7AD626B2987500D40B38 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC7AD526B2987500D40B38 /* MemoryStorage.swift */; };
+		DBCF82AE26B53A5F00B450D4 /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF82AD26B53A5F00B450D4 /* CommonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DBCC7ACF26B294DA00D40B38 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		DBCC7AD126B295FA00D40B38 /* MemoStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorageType.swift; sourceTree = "<group>"; };
 		DBCC7AD526B2987500D40B38 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
+		DBCF82AD26B53A5F00B450D4 /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				DB901B0C26B2D187002DD825 /* MemoListViewModel.swift */,
 				DB901B0E26B2D1B3002DD825 /* MemoDetailViewModel.swift */,
 				DB901B1026B2D1D7002DD825 /* MemoComposeViewModel.swift */,
+				DBCF82AD26B53A5F00B450D4 /* CommonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				DB02142F26B4572700EE660D /* SceneCoordinatorType.swift in Sources */,
 				DB901B0D26B2D187002DD825 /* MemoListViewModel.swift in Sources */,
 				DB901B0F26B2D1B3002DD825 /* MemoDetailViewModel.swift in Sources */,
+				DBCF82AE26B53A5F00B450D4 /* CommonViewModel.swift in Sources */,
 				DB424F3B26B42D0200867FDE /* TransitionModel.swift in Sources */,
 				DB901B0726B2D0C9002DD825 /* MemoListViewController.swift in Sources */,
 				DB901B0B26B2D113002DD825 /* MemoComposeViewController.swift in Sources */,
