@@ -27,24 +27,61 @@
         <!--메모 목록-->
         <scene sceneID="EW2-O6-Tz8">
             <objects>
-                <viewController storyboardIdentifier="ListNav" id="F6N-Cn-D9M" customClass="MemoListViewController" customModule="RxMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F6N-Cn-D9M" customClass="MemoListViewController" customModule="RxMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CM6-et-hyS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c6w-r7-mQq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="4JD-Ft-uua" style="IBUITableViewCellStyleDefault" id="FZY-JW-BXy">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FZY-JW-BXy" id="4wq-Km-eXn">
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4JD-Ft-uua">
+                                                    <rect key="frame" x="20" y="0.0" width="356.5" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LL3-2E-ozg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="c6w-r7-mQq" secondAttribute="bottom" id="9qO-Hl-Nwz"/>
+                            <constraint firstItem="c6w-r7-mQq" firstAttribute="leading" secondItem="LL3-2E-ozg" secondAttribute="leading" id="Kpl-jS-Nx1"/>
+                            <constraint firstItem="c6w-r7-mQq" firstAttribute="top" secondItem="CM6-et-hyS" secondAttribute="top" id="ZNO-XL-0ud"/>
+                            <constraint firstItem="c6w-r7-mQq" firstAttribute="trailing" secondItem="LL3-2E-ozg" secondAttribute="trailing" id="a4v-5a-bJp"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="메모 목록" id="kol-PU-atp"/>
+                    <navigationItem key="navigationItem" title="메모 목록" id="kol-PU-atp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8ua-vG-K9B"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addButton" destination="8ua-vG-K9B" id="9Zs-WZ-Xac"/>
+                        <outlet property="listTableVIew" destination="c6w-r7-mQq" id="Ibq-lc-CdA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDb-Ba-gPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2225" y="88"/>
+            <point key="canvasLocation" x="2224.6376811594205" y="87.723214285714278"/>
         </scene>
         <!--새 메모-->
         <scene sceneID="KlL-Z2-h6Z">
             <objects>
-                <viewController storyboardIdentifier="ComposeNav" id="w3t-67-7qY" customClass="MemoComposeViewController" customModule="RxMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w3t-67-7qY" customClass="MemoComposeViewController" customModule="RxMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y1w-Pl-ick">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +115,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fbl-X3-orh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wux-My-7m3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ListNav" automaticallyAdjustsScrollViewInsets="NO" id="wux-My-7m3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="RKm-cl-0AX">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -96,10 +133,10 @@
         <!--Navigation Controller-->
         <scene sceneID="XN7-8g-QOG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DfI-xq-HA3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ComposeNav" automaticallyAdjustsScrollViewInsets="NO" id="DfI-xq-HA3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="kbX-GB-LBu">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

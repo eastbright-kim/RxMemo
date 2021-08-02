@@ -7,7 +7,7 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
+//import RxCocoa
 
 class SceneCoordinator: SceneCoordinatorType {
     
@@ -15,40 +15,52 @@ class SceneCoordinator: SceneCoordinatorType {
     private var window: UIWindow
     private var currentVC: UIViewController
     
+    //여기 init이 아닌 required 인 이유
     required init(window: UIWindow) {
         self.window = window
+        //rootVC가 없는 상탠데 뭐가 들어갈까 . 처음 생성시 기본적으로 있는 루트 뷰컨.
         currentVC = window.rootViewController!
     }
     @discardableResult
     func transition(to scene: Scene, using style: TrainsitionStyle, animated: Bool) -> Completable {
-        
+        //가야하는 타겟
+        //뷰컨트롤러를 여기서 만듦
         let target = scene.instantiate()
-
-        return Completable.create { [unowned self] completable in
-
-            switch style {
-            case .root:
-                currentVC = target
-                window.rootViewController = target
-                completable(.completed)
-            case .push:
-                //푸시는 네비게이션 컨트롤러에 임베드 되어 있어야 의미가 있음
-                guard let nav = currentVC.navigationController else {
-                    completable(.error(TransitionError.navigationControllerMissing))
-                    return Disposables.create {}
-                }
-                nav.pushViewController(target, animated: animated)
-                currentVC = target
-                completable(.completed)
-            case .modal:
-                currentVC.present(target, animated: animated) {
-                    completable(.completed)
-                }
-                currentVC = target
+        let subject = PublishSubject<Void>()
+        
+        switch style {
+        case .root:
+            
+            guard let nav = target.navigationController else {
+                print("navi")
+                fatalError()
             }
-
-            return Disposables.create{}
+            
+            //현재 vc를 target으로 만들어 놓음
+            currentVC = target
+            //window의 rootvc를 nav으로 놓음
+            window.rootViewController = nav
+            //완료됨을 emit함
+            
+            
+            subject.onCompleted()
+        case .push:
+            //푸시는 네비게이션 컨트롤러에 임베드 되어 있어야 의미가 있음
+            //
+            guard let nav = currentVC.navigationController else {
+                subject.onError(TransitionError.navigationControllerMissing)
+                fatalError()
+            }
+            nav.pushViewController(target, animated: animated)
+            currentVC = target
+            subject.onCompleted()
+        case .modal:
+            currentVC.present(target, animated: animated) {
+                subject.onCompleted()
+            }
+            currentVC = target
         }
+        return subject.ignoreElements().asCompletable()
     }
     
     @discardableResult

@@ -147,8 +147,8 @@
 		DBCC7ACC26B28C4E00D40B38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DB901B0C26B2D187002DD825 /* MemoListViewModel.swift */,
 				DB901B0E26B2D1B3002DD825 /* MemoDetailViewModel.swift */,
+				DB901B0C26B2D187002DD825 /* MemoListViewModel.swift */,
 				DB901B1026B2D1D7002DD825 /* MemoComposeViewModel.swift */,
 				DBCF82AD26B53A5F00B450D4 /* CommonViewModel.swift */,
 			);
