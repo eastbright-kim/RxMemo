@@ -7,7 +7,15 @@
 
 import Foundation
 import RxSwift
-//import RxCocoa
+import RxCocoa
+import NSObject_Rx
+
+extension UIViewController {
+    var sceneViewController: UIViewController {
+        return self.children.first ?? self
+    }
+}
+
 
 class SceneCoordinator: SceneCoordinatorType {
     
@@ -30,13 +38,9 @@ class SceneCoordinator: SceneCoordinatorType {
         
         switch style {
         case .root:
-            
-            guard let nav = target.navigationController else {
-                fatalError()
-            }
-            
-            currentVC = target
-            window.rootViewController = nav
+
+            currentVC = target.sceneViewController
+            window.rootViewController = target
             
             subject.onCompleted()
         case .push:
@@ -44,16 +48,23 @@ class SceneCoordinator: SceneCoordinatorType {
             //
             guard let nav = currentVC.navigationController else {
                 subject.onError(TransitionError.navigationControllerMissing)
-                fatalError()
+                break
             }
+            
+            nav.rx.willShow
+                .subscribe (onNext:{ [unowned self] evt in
+                    self.currentVC = evt.viewController.sceneViewController
+                })
+                .disposed(by: bag)
+            
             nav.pushViewController(target, animated: animated)
-            currentVC = target
+            currentVC = target.sceneViewController
             subject.onCompleted()
         case .modal:
             currentVC.present(target, animated: animated) {
                 subject.onCompleted()
             }
-            currentVC = target
+            currentVC = target.sceneViewController
         }
         return subject.ignoreElements().asCompletable()
     }
@@ -64,7 +75,7 @@ class SceneCoordinator: SceneCoordinatorType {
             //뷰컨트롤러가 모달 방식으로 표시되어 있다면 현재 씬을 디스미스한다
             if let presentingVC = self.currentVC.presentingViewController {
                 self.currentVC.dismiss(animated: animated) {
-                    self.currentVC = presentingVC
+                    self.currentVC = presentingVC.sceneViewController
                     completable(.completed)
                 }
             } else if let nav = self.currentVC.navigationController {

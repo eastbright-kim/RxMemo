@@ -29,7 +29,7 @@ extension Scene {
             
             vc.bind(viewModel: viewModel)
             
-            return vc
+            return nav
         case .compose(let viewModel):
             guard let nav = storyboard.instantiateViewController(withIdentifier: "ComposeNav") as? UINavigationController else {
                 fatalError()

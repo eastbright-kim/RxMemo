@@ -32,4 +32,10 @@ class MemoDetailViewModel: CommonViewModel {
         super.init(title: title, sceneCoordinator: sceneCoordinator, storage: storage)
     }
     
+//    lazy var closeAction: CocoaAction = {
+//        return CocoaAction { _ in
+//            return self.sceneCoordinator.close(animated: true).asObservable().map{_ in}
+//        }
+//    }()
+    
 }
