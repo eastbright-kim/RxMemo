@@ -25,7 +25,7 @@ class MemoComposeViewModel: CommonViewModel {
         self.saveAction = Action<String, Void>{ input in
             //action이 전달되었다면 실제로 action을 실행하고 화면을 닫음
             if let action = saveAction {
-                    action.execute(input)
+                action.execute(input)
             }
             //action이 전달되지 않았다면 화면만 닫고 끝남
             return sceneCoordinator.close(animated: true).asObservable().map{_ in}

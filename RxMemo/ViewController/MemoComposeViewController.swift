@@ -10,6 +10,8 @@ import RxSwift
 import RxCocoa
 import Action
 import NSObject_Rx
+
+
 class MemoComposeViewController: UIViewController, ViewModelBindableType {
 
     var viewModel: MemoComposeViewModel!

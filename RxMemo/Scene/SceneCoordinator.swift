@@ -32,16 +32,11 @@ class SceneCoordinator: SceneCoordinatorType {
         case .root:
             
             guard let nav = target.navigationController else {
-                print("navi")
                 fatalError()
             }
             
-            //현재 vc를 target으로 만들어 놓음
             currentVC = target
-            //window의 rootvc를 nav으로 놓음
             window.rootViewController = nav
-            //완료됨을 emit함
-            
             
             subject.onCompleted()
         case .push:

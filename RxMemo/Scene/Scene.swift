@@ -37,7 +37,7 @@ extension Scene {
             
             guard var vc = nav.viewControllers.first as? MemoComposeViewController else { fatalError() }
             vc.bind(viewModel: viewModel)
-            return vc
+            return nav
         case .detail(let viewModel):
             guard var vc = storyboard.instantiateViewController(withIdentifier: "DetailVC") as? MemoDetailViewController else { fatalError() }
             vc.bind(viewModel: viewModel)
