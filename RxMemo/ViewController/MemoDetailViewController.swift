@@ -57,6 +57,8 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
         
         self.editButton.rx.action = viewModel.makeEditAction()
         
+        self.deleteButton.rx.action = viewModel.makeDeleteAction()
+        
         self.shareButton.rx.tap
             .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
@@ -70,6 +72,4 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
         
         
     }
-    
-    
 }

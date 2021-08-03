@@ -13,7 +13,7 @@ protocol MemoStorageType {
     func createMemo(content: String) -> Observable<Memo> // 작업 결과가 필요 없는 경우 - discardable result
     
     @discardableResult
-    func memoList() -> Observable<[Memo]>
+    func memoList() -> Observable<[MemoSectionModel]>
     
     @discardableResult
     func update(memo: Memo, content: String) -> Observable<Memo>

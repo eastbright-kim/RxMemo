@@ -75,4 +75,11 @@ class MemoDetailViewModel: CommonViewModel {
 //        }
 //    }
     
+    func makeDeleteAction() -> CocoaAction {
+        return Action { _ in
+            self.storage.delete(memo: self.memo)
+            return self.sceneCoordinator.close(animated: true).asObservable().map{_ in}
+        }
+    }
+    
 }
