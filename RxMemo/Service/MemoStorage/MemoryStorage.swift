@@ -16,6 +16,7 @@ class MemoryStorage: MemoStorageType {
     ]
     
     private lazy var store = BehaviorSubject<[Memo]>(value: list)
+    private lazy var updatedMemo = PublishSubject<Memo>()
     
     @discardableResult
     func createMemo(content: String) -> Observable<Memo> {

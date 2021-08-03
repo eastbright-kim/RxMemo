@@ -52,5 +52,8 @@ class MemoDetailViewController: UIViewController, ViewModelBindableType {
 //        
 //        backButton.rx.action = viewModel.closeAction
 //        navigationItem.leftBarButtonItem = backButton
+        
+        
+        self.editButton.rx.action = viewModel.makeEditAction()
     }
 }

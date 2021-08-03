@@ -10,8 +10,11 @@ import RxSwift
 import RxCocoa
 import Action
 
+
 class MemoDetailViewModel: CommonViewModel {
+    let bag = DisposeBag()
     let memo: Memo
+    
     
     private var formatter: DateFormatter = {
         let f = DateFormatter()
@@ -38,4 +41,28 @@ class MemoDetailViewModel: CommonViewModel {
 //        }
 //    }()
     
+    func performUpdate(memo: Memo) -> Action<String, Void> {
+        return Action { input in
+            //인풋으로 메모를 바꾼다.
+//            self.contents.onNext([input, self.formatter.string(from: self.memo.insertDate)])
+            self.storage.update(memo: memo, content: input)
+                .subscribe(onNext: { memo in
+                    self.contents.onNext([memo.content, self.formatter.string(from: memo.insertDate)])
+                })
+                .disposed(by: self.bag)
+            //옵저버블이 방출하는 형식이 void. update메소드가 리턴하는 옵저버블은 편집된 메모를 방출함 -> map으로 해결
+            return Observable.empty()
+        }
+    }
+    
+    func makeEditAction() -> CocoaAction {
+        return CocoaAction {  _ in
+            
+            let viewModel = MemoComposeViewModel(title: "메모 편집", content: self.memo.content, sceneCoordinator: self.sceneCoordinator, storage: self.storage, saveAction: self.performUpdate(memo: self.memo))
+            
+            let scene = Scene.compose(viewModel)
+            
+            return self.sceneCoordinator.transition(to: scene, using: .modal, animated: true).asObservable().map{_ in}
+        }
+    }
 }
